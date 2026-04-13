@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"str.from expects a scalar value","partial_trace_digest":"sha256:23df7f307f8bb703b20704b46c894f300a375afada0d4d10483469ed8f138f2c","span":{"col":6,"file":"test_float_conversion.fard","line":22},"witnessed_failure":true}

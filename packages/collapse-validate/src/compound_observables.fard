@@ -1,0 +1,35 @@
+fn rows() {
+  [
+    { formula: "NaCl",  observable: "band_gap_eV", value: 8.5 },
+    { formula: "KBr",   observable: "band_gap_eV", value: 7.2 },
+    { formula: "MgO",   observable: "band_gap_eV", value: 7.8 },
+    { formula: "CaF2",  observable: "band_gap_eV", value: 12.1 },
+    { formula: "LiF",   observable: "band_gap_eV", value: 13.6 },
+
+    { formula: "H2O",   observable: "band_gap_eV", value: 8.7 },
+    { formula: "HCl",   observable: "band_gap_eV", value: 8.4 },
+    { formula: "NH3",   observable: "band_gap_eV", value: 5.6 },
+    { formula: "SO2",   observable: "band_gap_eV", value: 5.3 },
+    { formula: "PCl3",  observable: "band_gap_eV", value: 5.8 },
+
+    { formula: "SiO2",  observable: "band_gap_eV", value: 8.9 },
+    { formula: "BN",    observable: "band_gap_eV", value: 5.9 },
+    { formula: "SiC",   observable: "band_gap_eV", value: 2.4 },
+    { formula: "AlN",   observable: "band_gap_eV", value: 6.2 },
+
+    { formula: "CuZn",  observable: "band_gap_eV", value: 0.0 },
+    { formula: "NiAl",  observable: "band_gap_eV", value: 0.0 },
+    { formula: "FeAl",  observable: "band_gap_eV", value: 0.0 },
+    { formula: "TiAl",  observable: "band_gap_eV", value: 0.0 },
+
+    { formula: "FeO",   observable: "band_gap_eV", value: 2.4 },
+    { formula: "Fe2O3", observable: "band_gap_eV", value: 2.1 },
+    { formula: "TiO2",  observable: "band_gap_eV", value: 3.2 },
+    { formula: "MnO2",  observable: "band_gap_eV", value: 0.3 },
+    { formula: "CuO",   observable: "band_gap_eV", value: 1.2 }
+  ]
+}
+
+{
+  rows: rows
+}

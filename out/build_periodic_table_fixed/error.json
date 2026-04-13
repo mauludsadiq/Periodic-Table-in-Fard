@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"str.from expects a scalar value","partial_trace_digest":"sha256:1d036a5002548ffe9343500f626ecb81c1c361288f12426a6cc85c564cc93a40","span":{"col":6,"file":"apps/build_periodic_table_fixed.fard","line":50},"witnessed_failure":true}

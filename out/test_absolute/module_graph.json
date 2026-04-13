@@ -1,0 +1,1 @@
+{"edges":[{"from":0,"kind":"import","to":1}],"nodes":[{"digest":"sha256:0d95da457676acdb0be82c3df2461d74059c9eae0d486c17501c8b0f49fb328a","id":0,"kind":"rel","path":"test_import_absolute.fard","spec":"test_import_absolute.fard"},{"id":1,"kind":"rel","spec":"/Users/g.bogans/Downloads/Periodic Table in Fard/packages/collapse-core/src/types.fard"}]}

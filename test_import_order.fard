@@ -1,0 +1,6 @@
+import("./packages/collapse-core/src/types") as ctypes
+import("std/list") as list
+import("std/str") as str
+
+fn main() { "ok" }
+main()

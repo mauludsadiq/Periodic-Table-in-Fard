@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"unbound var: list -- did you forget to import? Try: import(\"std/list\") as list","partial_trace_digest":"sha256:1658a177bc1cd1cc6c65c6deb9b27acc9e9e6c4c0e993fd6b339330378c2fc36","span":{"col":6,"file":"inspect_record.fard","line":14},"witnessed_failure":true}

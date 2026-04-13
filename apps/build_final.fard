@@ -1,0 +1,52 @@
+import("std/io") as io
+import("std/list") as list
+import("std/str") as str
+import("std/cast") as cast
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-elements/src/export") as exp
+import("./packages/collapse-elements/src/analysis") as analysis
+
+fn counts(elements) {
+  let total = list.len(elements) in
+  let e_phase = list.len(analysis.by_phase(elements, "E")) in
+  let z_phase = list.len(analysis.by_phase(elements, "Z")) in
+  let one_phase = list.len(analysis.by_phase(elements, "1")) in
+  {
+    total: total,
+    e_phase: e_phase,
+    z_phase: z_phase,
+    one_phase: one_phase
+  }
+}
+
+fn summary_text(table) {
+  let c = counts(table.elements) in
+  str.join([
+    "Periodic Table in FARD",
+    "======================",
+    "total elements=${c.total}",
+    "E phase=${c.e_phase}",
+    "Z phase=${c.z_phase}",
+    "1 phase=${c.one_phase}"
+  ], "\n")
+}
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let config = ctypes.build_config() in
+  io.write_file("out/debug.txt", "Starting build") in
+  let table = ptable.build_table("data/pubchem_periodic_table.csv", "data/polarizability_2020.csv", config) in
+  io.write_file("out/debug2.txt", "Table built") in
+  let c = counts(table.elements) in
+  let manifest = ctypes.make_build_manifest(config, c, [
+    "Phase 1 scaffold build",
+    "Elemental collapse field only",
+    "Extend export module next for richer CSV + JSON artifacts"
+  ]) in
+  let _ = exp.write_json("out/build_manifest.json", manifest) in
+  let _ = exp.write_text("out/build_summary.txt", summary_text(table)) in
+  manifest
+}
+
+main()

@@ -1,0 +1,5 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:775fa2a421ddf83aafe2f2be790e9dbf09c0003cfd370d96f821e26c64cea160","kind":"std","name":"std/bytes","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"cid":"sha256:7d33c1be2eec47b8a23275692974f7770afb9582ac7e1a659304e01d7f553d74","t":"module_graph"}

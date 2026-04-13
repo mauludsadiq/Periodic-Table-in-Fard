@@ -1,0 +1,1 @@
+{"edges":[{"from":0,"kind":"import","to":1}],"nodes":[{"digest":"sha256:afab80259fd86a50f0f745aa25f36ccd1981a82e3aaeb6a0d5c7d4c3804397f3","id":0,"kind":"rel","path":"test_simple.fard","spec":"test_simple.fard"},{"id":1,"kind":"rel","spec":"./packages/collapse-core/src/types.fard"}]}

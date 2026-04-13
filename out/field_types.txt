@@ -1,0 +1,5 @@
+IonizationEnergy=float
+ElectronAffinity=float
+Electronegativity=float
+alpha_au=float
+hardness=float

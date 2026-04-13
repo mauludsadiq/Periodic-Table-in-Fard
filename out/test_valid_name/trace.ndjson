@@ -1,0 +1,5 @@
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:e6e781035e19465a7cdaad77c1c99d3bf2d84ccf2933a54073422152f24a3e5a","t":"witnessed_failure"}
+{"cid":"sha256:0e7da01edcfe8d171f1eb6d9e36c6091b2e3dbcf0afdd65e30af06734c49463d","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME No such file or directory (os error 2)","t":"error"}

@@ -1,0 +1,27 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/type") as type
+import("std/list") as list
+import("std/str") as str
+import("./packages/collapse-data/src/pubchem") as pubchem
+import("./packages/collapse-data/src/polarizability") as polar
+import("./packages/collapse-data/src/merge") as merge
+
+fn main() {
+  let pub0 = pubchem.load_pubchem("data/pubchem_periodic_table.csv") in
+  let pol0 = polar.load_polarizability("data/polarizability_2020.csv") in
+  let pubs = pubchem.normalize_pubchem(pub0) in
+  let pols = polar.normalize_polarizability(pol0) in
+  let merged = merge.merge_pubchem_and_polar(pubs, pols) in
+  let row = list.head(merged) in
+  let lines = [
+    "IonizationEnergy=${type.of(rec.get(row, "IonizationEnergy"))}",
+    "ElectronAffinity=${type.of(rec.get(row, "ElectronAffinity"))}",
+    "Electronegativity=${type.of(rec.get(row, "Electronegativity"))}",
+    "alpha_au=${type.of(rec.get(row, "alpha_au"))}",
+    "hardness=${type.of(rec.get(row, "hardness"))}"
+  ] in
+  io.write_file("out/field_types.txt", str.join(lines, "\n"))
+}
+
+main()

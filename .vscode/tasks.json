@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "FARD: Build periodic table",
+      "type": "shell",
+      "command": "fardrun",
+      "args": [
+        "run",
+        "--program",
+        "apps/build_periodic_table.fard",
+        "--out",
+        "out"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "FARD: Inspect examples",
+      "type": "shell",
+      "command": "fardrun",
+      "args": [
+        "run",
+        "--program",
+        "apps/inspect_examples.fard",
+        "--out",
+        "out"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

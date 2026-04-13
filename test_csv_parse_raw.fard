@@ -1,0 +1,10 @@
+import("std/io") as io
+import("std/csv") as csv
+
+fn main() {
+  let raw = io.read_file("data/pubchem_periodic_table.csv") in
+  let parsed = csv.parse(raw) in
+  let count = list.len(parsed) in
+  io.write_file("out/row_count.txt", str.from(count))
+}
+main()

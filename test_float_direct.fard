@@ -1,0 +1,9 @@
+import("std/io") as io
+
+fn main() {
+  let a = 42.0
+  let b = 1.0
+  let sum = a + b
+  io.write_file("out/sum.txt", "done")
+}
+main()

@@ -1,0 +1,3 @@
+import("./packages/collapse-elements/src/export") as exp
+fn main() { "ok" }
+main()

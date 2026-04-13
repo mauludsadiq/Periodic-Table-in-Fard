@@ -1,0 +1,9 @@
+{"cid":"sha256:63c2161045b1d80bd50ae93bba10d2c78045f53160030c32f7b7b2835cc647c8","kind":"rel","name":"./packages/collapse-elements/src/element_record","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"cid":"sha256:f79bf4589e30540807ab2da81cf55fc0e0873e31dee374428d70b91bda16679b","kind":"rel","name":"../../collapse-core/src/types","t":"module_resolve"}
+{"cid":"sha256:d4deddf5f7d5ea12fb055e4a9fc5bc09a7d133e13d0c9831abb4896d87f80d4f","kind":"rel","name":"./calibrator","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:e6d6abafa5374cac6472a6a5dfa15b5b395c8f0bb7e6ee740ab5aaf78d0513b7","kind":"rel","name":"../../collapse-core/src/math","t":"module_resolve"}
+{"cid":"sha256:a995d315521288d60dc796fdfdcdcf3d0ffeb973cdeed995ac5792350ff31436","kind":"rel","name":"../../collapse-core/src/phase","t":"module_resolve"}
+{"cid":"sha256:3731e7ca7995a39368648dd7861d7cb81ec07e4506f58923c58659a30fbdb6c1","t":"module_graph"}

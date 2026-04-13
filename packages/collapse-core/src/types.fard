@@ -1,0 +1,61 @@
+fn build_config() {
+  {
+    w_chi: 1.0,
+    w_eta: 0.7,
+    w_alpha: 0.5,
+    phi_threshold: 0.5
+  }
+}
+
+fn make_calibrator_stats(chi_mean, chi_std, eta_mean, eta_std, alpha_mean, alpha_std, config) {
+  {
+    weights: {
+      w_chi: config.w_chi,
+      w_eta: config.w_eta,
+      w_alpha: config.w_alpha
+    },
+    phi_threshold: config.phi_threshold,
+    stats: {
+      chi_mean: chi_mean,
+      chi_std: chi_std,
+      eta_mean: eta_mean,
+      eta_std: eta_std,
+      alpha_mean: alpha_mean,
+      alpha_std: alpha_std
+    }
+  }
+}
+
+fn make_element_record(z, symbol, name, ionization_energy, electron_affinity, electronegativity, polarizability_au, hardness, phi_star, phase, color, group, period) {
+  {
+    Z: z,
+    symbol: symbol,
+    name: name,
+    ionization_energy: ionization_energy,
+    electron_affinity: electron_affinity,
+    electronegativity: electronegativity,
+    polarizability_au: polarizability_au,
+    hardness: hardness,
+    phi_star: phi_star,
+    phase: phase,
+    color: color,
+    group: group,
+    period: period
+  }
+}
+
+fn make_build_manifest(config, counts, notes) {
+  {
+    config: config,
+    counts: counts,
+    notes: notes
+  }
+}
+
+
+{
+  build_config: build_config,
+  make_calibrator_stats: make_calibrator_stats,
+  make_element_record: make_element_record,
+  make_build_manifest: make_build_manifest
+}

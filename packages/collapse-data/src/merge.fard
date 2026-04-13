@@ -1,0 +1,40 @@
+import("std/list") as list
+import("std/rec") as rec
+import("../../collapse-core/src/math") as cmath
+
+fn find_by_atomic_number(rows, target_z) {
+  let matches = list.filter(rows, fn(row) {
+    rec.get(row, "AtomicNumber") == target_z
+  }) in
+  if list.len(matches) > 0 then list.head(matches) else null
+}
+
+fn merge_row(pub_row, polar_row) {
+  let a = rec.get(pub_row, "ElectronAffinity") in
+  let i = rec.get(pub_row, "IonizationEnergy") in
+  let a_clean = cmath.safe_electron_affinity(a) in
+  {
+    AtomicNumber: rec.get(pub_row, "AtomicNumber"),
+    Symbol: rec.get(pub_row, "Symbol"),
+    Name: rec.get(pub_row, "Name"),
+    IonizationEnergy: i,
+    ElectronAffinity: a_clean,
+    Electronegativity: rec.get(pub_row, "Electronegativity"),
+    alpha_au: if polar_row == null then null else rec.get(polar_row, "alpha_au"),
+    hardness: cmath.hardness(i, a_clean)
+  }
+}
+
+fn merge_pubchem_and_polar(pub_rows, polar_rows) {
+  list.map(pub_rows, fn(row) {
+    let z = rec.get(row, "AtomicNumber") in
+    let polar = find_by_atomic_number(polar_rows, z) in
+    merge_row(row, polar)
+  })
+}
+
+{
+  find_by_atomic_number: find_by_atomic_number,
+  merge_row: merge_row,
+  merge_pubchem_and_polar: merge_pubchem_and_polar
+}

@@ -1,0 +1,10 @@
+import("std/io") as io
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let text = "Rendering stub: add collapse-render package next." in
+  let _ = io.write_file("out/render_stub.txt", text) in
+  { ok: true, output: "out/render_stub.txt" }
+}
+
+main()

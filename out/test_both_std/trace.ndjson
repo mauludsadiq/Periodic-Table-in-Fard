@@ -1,0 +1,4 @@
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"cid":"sha256:f79bf4589e30540807ab2da81cf55fc0e0873e31dee374428d70b91bda16679b","kind":"rel","name":"./packages/collapse-core/src/types","t":"module_resolve"}
+{"cid":"sha256:4c4eeadaac6878fa9f3124856dc378411593df2e179be848a2e726f6060787a2","t":"module_graph"}

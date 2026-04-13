@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"unbound var: type -- did you forget to import? Try: import(\"std/type\") as type","partial_trace_digest":"sha256:d7cc2a63ed9bd059f7de1c825166dd470becd77966c30aba2af331278be5cb1c","span":{"col":6,"file":"debug_fold.fard","line":29},"witnessed_failure":true}

@@ -1,0 +1,3 @@
+import("./packages/collapse-core/src/types") as ctypes
+fn main() { "ok" }
+main()

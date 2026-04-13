@@ -1,0 +1,1 @@
+{"config":{"phi_threshold":0.5,"w_alpha":0.5,"w_chi":1,"w_eta":0.7000000000000001},"counts":{"e_phase":33,"one_phase":19,"total":118,"z_phase":66},"notes":["Phase 1 scaffold build","Elemental collapse field only","PubChem base table with polarizability enrichment","Exports full built element artifacts as JSON and CSV"]}

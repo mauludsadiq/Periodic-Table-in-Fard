@@ -1,0 +1,13 @@
+import("std/list") as list
+import("std/str") as str
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-elements/src/export") as exp
+import("./packages/collapse-elements/src/analysis") as analysis
+
+fn my_counts(elements) {
+  { total: 0 }
+}
+
+fn main() { "ok" }
+main()

@@ -1,0 +1,5 @@
+{"cid":"sha256:e6d6abafa5374cac6472a6a5dfa15b5b395c8f0bb7e6ee740ab5aaf78d0513b7","kind":"rel","name":"packages/collapse-core/src/math","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:f79bf4589e30540807ab2da81cf55fc0e0873e31dee374428d70b91bda16679b","kind":"rel","name":"packages/collapse-core/src/types","t":"module_resolve"}
+{"cid":"sha256:a995d315521288d60dc796fdfdcdcf3d0ffeb973cdeed995ac5792350ff31436","kind":"rel","name":"packages/collapse-core/src/phase","t":"module_resolve"}
+{"cid":"sha256:16270a4477c138c9333745daa21cce59abb610fe09ea4efe736b93685e61c84a","t":"module_graph"}

@@ -1,0 +1,32 @@
+import("std/list") as list
+import("../../collapse-elements/src/analysis") as analysis
+import("./ground_truth") as truth
+
+fn join_element_truth(elements) {
+  list.map(truth.elemental_truth_rows(), fn(t) {
+    let e_opt = analysis.by_symbol(elements, t.symbol) in
+    let e = e_opt.some in
+    {
+      symbol: t.symbol,
+      metal_class: t.metal_class,
+      reactivity_class: t.reactivity_class,
+      oxidation_breadth: t.oxidation_breadth,
+      chi_tier: t.chi_tier,
+      Z: e.Z,
+      period: e.period,
+      group: e.group,
+      I_eV: e.ionization_energy,
+      A_eV: e.electron_affinity,
+      chi: e.electronegativity,
+      alpha_au: e.polarizability_au,
+      eta_eV: e.hardness,
+      phi_star: e.phi_star,
+      phase: e.phase,
+      color: e.color
+    }
+  })
+}
+
+{
+  join_element_truth: join_element_truth
+}

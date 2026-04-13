@@ -1,0 +1,11 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/str") as str
+
+fn main() {
+  let raw = io.read_file("data/pubchem_periodic_table.csv") in
+  let keys = rec.keys(raw) in
+  let keys_str = str.from(keys) in
+  io.write_file("out/record_keys.txt", keys_str)
+}
+main()

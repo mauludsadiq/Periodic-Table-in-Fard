@@ -1,0 +1,8 @@
+import("std/cast") as cast
+
+fn main() {
+  let c = { total: 10, e_phase: 5, z_phase: 3, one_phase: 2 }
+  let result = "total elements=${c.total}"
+  "ok"
+}
+main()

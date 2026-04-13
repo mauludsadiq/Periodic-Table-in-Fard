@@ -1,0 +1,49 @@
+import("std/list") as list
+import("std/str") as str
+import("./layouts") as layouts
+
+fn rect_color_at(elements, layout, x, y) {
+  let matches = list.filter(list.range(0, list.len(elements)), fn(idx) {
+    let e = list.get(elements, idx) in
+    let origin = layouts.cell_origin(layout, idx) in
+    let x1 = origin.x in
+    let y1 = origin.y in
+    let x2 = origin.x + (layout.cell - 8) in
+    let y2 = origin.y + (layout.cell - 8) in
+    (x >= x1) && (x < x2) && (y >= y1) && (y < y2)
+  }) in
+  if list.len(matches) == 0 then layouts.phase_color("BG")
+  else
+    let idx = list.head(matches) in
+    let e = list.get(elements, idx) in
+    layouts.phase_color(e.phase)
+}
+
+fn pixel_text(p) {
+  "${p.r} ${p.g} ${p.b}"
+}
+
+fn row_text(elements, layout, y) {
+  str.join(list.map(list.range(0, layout.width), fn(x) {
+    pixel_text(rect_color_at(elements, layout, x, y))
+  }), "\n")
+}
+
+fn render_ppm_text(elements, layout) {
+  let header = [
+    "P3",
+    "${layout.width} ${layout.height}",
+    "255"
+  ] in
+  let body = list.map(list.range(0, layout.height), fn(y) {
+    row_text(elements, layout, y)
+  }) in
+  str.join(list.concat([header, body]), "\n")
+}
+
+{
+  rect_color_at: rect_color_at,
+  pixel_text: pixel_text,
+  row_text: row_text,
+  render_ppm_text: render_ppm_text
+}

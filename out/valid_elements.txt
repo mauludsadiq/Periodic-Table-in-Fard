@@ -1,0 +1,8 @@
+1 H Hydrogen
+2 He Helium
+3 Li Lithium
+6 C Carbon
+8 O Oxygen
+11 Na Sodium
+17 Cl Chlorine
+26 Fe Iron

@@ -1,0 +1,14 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+
+fn main() {
+  let result = io.read_file("data/pubchem_periodic_table.csv") in
+  let text = rec.get(result, "ok") in
+  let parsed = csv.parse(text) in
+  let first_row = list.head(parsed) in
+  let type_first = type.of(first_row) in
+  io.write_file("out/csv_structure.txt", type_first)
+}
+main()

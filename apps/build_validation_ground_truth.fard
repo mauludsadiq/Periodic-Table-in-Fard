@@ -1,0 +1,14 @@
+import("std/io") as io
+import("std/json") as json
+import("./packages/collapse-validate/src/ground_truth") as truth
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let payload = {
+    elements: truth.elemental_truth_rows(),
+    compounds: truth.compound_truth_rows()
+  } in
+  io.write_file("out/validation_ground_truth.json", json.encode(payload))
+}
+
+main()

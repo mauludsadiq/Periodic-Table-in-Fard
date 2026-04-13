@@ -1,0 +1,74 @@
+fn elemental_truth_rows() {
+  [
+    { symbol: "H",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "MID" },
+    { symbol: "He", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Li", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Be", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "MID" },
+    { symbol: "B",  metal_class: "MT", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "MID" },
+    { symbol: "C",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "N",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "O",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "F",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "HIGH" },
+    { symbol: "Ne", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "NARROW", chi_tier: "LOW" },
+
+    { symbol: "Na", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Mg", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Al", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "MID" },
+    { symbol: "Si", metal_class: "MT", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "MID" },
+    { symbol: "P",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "MID" },
+    { symbol: "S",  metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "Cl", metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "Ar", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "NARROW", chi_tier: "LOW" },
+
+    { symbol: "K",  metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Ca", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Fe", metal_class: "M",  reactivity_class: "TRANSITION", oxidation_breadth: "WIDE", chi_tier: "MID" },
+    { symbol: "Cu", metal_class: "M",  reactivity_class: "TRANSITION", oxidation_breadth: "WIDE", chi_tier: "MID" },
+    { symbol: "Zn", metal_class: "M",  reactivity_class: "TRANSITION", oxidation_breadth: "NARROW", chi_tier: "MID" },
+    { symbol: "Br", metal_class: "NM", reactivity_class: "REACTIVE", oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "Kr", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "NARROW", chi_tier: "HIGH" },
+
+    { symbol: "Xe", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "WIDE",   chi_tier: "HIGH" },
+    { symbol: "Cs", metal_class: "M",  reactivity_class: "REACTIVE", oxidation_breadth: "NARROW", chi_tier: "LOW" },
+    { symbol: "Pt", metal_class: "M",  reactivity_class: "TRANSITION", oxidation_breadth: "WIDE", chi_tier: "HIGH" },
+    { symbol: "Au", metal_class: "M",  reactivity_class: "TRANSITION", oxidation_breadth: "WIDE", chi_tier: "HIGH" },
+    { symbol: "Rn", metal_class: "NM", reactivity_class: "NOBLE",    oxidation_breadth: "NARROW", chi_tier: "LOW" }
+  ]
+}
+
+fn compound_truth_rows() {
+  [
+    { formula: "NaCl",  true_class: "IONIC" },
+    { formula: "KBr",   true_class: "IONIC" },
+    { formula: "MgO",   true_class: "IONIC" },
+    { formula: "CaF2",  true_class: "IONIC" },
+    { formula: "LiF",   true_class: "IONIC" },
+
+    { formula: "H2O",   true_class: "POLAR_COVALENT" },
+    { formula: "HCl",   true_class: "POLAR_COVALENT" },
+    { formula: "NH3",   true_class: "POLAR_COVALENT" },
+    { formula: "SO2",   true_class: "POLAR_COVALENT" },
+    { formula: "PCl3",  true_class: "POLAR_COVALENT" },
+
+    { formula: "SiO2",  true_class: "NETWORK_COVALENT" },
+    { formula: "BN",    true_class: "NETWORK_COVALENT" },
+    { formula: "SiC",   true_class: "NETWORK_COVALENT" },
+    { formula: "AlN",   true_class: "NETWORK_COVALENT" },
+
+    { formula: "CuZn",  true_class: "INTERMETALLIC" },
+    { formula: "NiAl",  true_class: "INTERMETALLIC" },
+    { formula: "FeAl",  true_class: "INTERMETALLIC" },
+    { formula: "TiAl",  true_class: "INTERMETALLIC" },
+
+    { formula: "FeO",   true_class: "TM_OXIDE" },
+    { formula: "Fe2O3", true_class: "TM_OXIDE" },
+    { formula: "TiO2",  true_class: "TM_OXIDE" },
+    { formula: "MnO2",  true_class: "TM_OXIDE" },
+    { formula: "CuO",   true_class: "TM_OXIDE" }
+  ]
+}
+
+{
+  elemental_truth_rows: elemental_truth_rows,
+  compound_truth_rows: compound_truth_rows
+}

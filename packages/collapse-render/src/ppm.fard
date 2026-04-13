@@ -1,0 +1,65 @@
+import("std/io") as io
+import("std/list") as list
+import("std/str") as str
+
+fn rgb(r, g, b) {
+  { r: r, g: g, b: b }
+}
+
+fn blank(width, height, color) {
+  {
+    width: width,
+    height: height,
+    pixels: list.map(list.range(0, width * height), fn(_) { color })
+  }
+}
+
+fn index_of(img, x, y) {
+  (y * img.width) + x
+}
+
+fn set_pixel(img, x, y, color) {
+  let i = index_of(img, x, y) in
+  {
+    width: img.width,
+    height: img.height,
+    pixels: list.map(list.range(0, list.len(img.pixels)), fn(j) {
+      if j == i then color else list.get(img.pixels, j)
+    })
+  }
+}
+
+fn clamp_channel(v) {
+  if v < 0 then 0
+  else if v > 255 then 255
+  else v
+}
+
+fn pixel_text(p) {
+  "${clamp_channel(p.r)} ${clamp_channel(p.g)} ${clamp_channel(p.b)}"
+}
+
+fn ppm_text(img) {
+  let header = [
+    "P3",
+    "${img.width} ${img.height}",
+    "255"
+  ] in
+  let body = list.map(img.pixels, pixel_text) in
+  str.join(list.concat([header, body]), "\n")
+}
+
+fn write_ppm(path, img) {
+  io.write_file(path, ppm_text(img))
+}
+
+{
+  rgb: rgb,
+  blank: blank,
+  index_of: index_of,
+  set_pixel: set_pixel,
+  clamp_channel: clamp_channel,
+  pixel_text: pixel_text,
+  ppm_text: ppm_text,
+  write_ppm: write_ppm
+}

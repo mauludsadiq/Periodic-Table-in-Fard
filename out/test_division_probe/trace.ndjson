@@ -1,0 +1,6 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:48d83aff4432560e3cbbbbce7793f5a20c0912b8a7d283c2fa52a18e9dd75273","kind":"std","name":"std/cast","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:392729dba7de6061e02b486181c77b07799d3b282a910734e74d902440310d4d","t":"witnessed_failure"}
+{"cid":"sha256:46d249e4e47d245d83705a51be28f87353ca0b35bc0ef2bebb9ea3652adca31d","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME bad binop /","t":"error"}

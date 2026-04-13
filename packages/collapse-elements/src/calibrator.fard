@@ -1,0 +1,87 @@
+import("std/list") as list
+import("std/float") as float
+import("std/math") as math
+import("std/cast") as cast
+import("std/rec") as rec
+
+import("../../collapse-core/src/math") as cmath
+import("../../collapse-core/src/phase") as cphase
+import("../../collapse-core/src/types") as ctypes
+
+fn valid_rows(rows, key) {
+  list.filter(rows, fn(row) { rec.get(row, key) != null })
+}
+
+fn sum_field(rows, key) {
+  list.fold(rows, 0.0, fn(acc, row) {
+    let v = rec.get(row, key) in
+    if v == null then acc else acc + v
+  })
+}
+
+fn mean_field(rows, key) {
+  let valid = valid_rows(rows, key) in
+  if list.len(valid) == 0 then 0.0
+  else (sum_field(valid, key) / cast.float(list.len(valid)))
+}
+
+fn variance_field(rows, key, mean) {
+  let valid = valid_rows(rows, key) in
+  let total = list.fold(valid, 0.0, fn(acc, row) {
+    let x = rec.get(row, key) in
+    acc + ((x - mean) * (x - mean))
+  }) in
+  if list.len(valid) == 0 then 0.0
+  else (total / cast.float(list.len(valid)))
+}
+
+fn std_field(rows, key, mean) {
+  math.sqrt(variance_field(rows, key, mean))
+}
+
+fn fit_calibrator(rows, config) {
+  let chi_mean = mean_field(rows, "Electronegativity") in
+  let eta_mean = mean_field(rows, "hardness") in
+  let alpha_mean = mean_field(rows, "alpha_au") in
+  let chi_std = std_field(rows, "Electronegativity", chi_mean) in
+  let eta_std = std_field(rows, "hardness", eta_mean) in
+  let alpha_std = std_field(rows, "alpha_au", alpha_mean) in
+  ctypes.make_calibrator_stats(
+    chi_mean,
+    chi_std,
+    eta_mean,
+    eta_std,
+    alpha_mean,
+    alpha_std,
+    config
+  )
+}
+
+fn compute_phi_star(stats, config, row) {
+  let s = stats.stats in
+  let chi_t = cmath.zscore(rec.get(row, "Electronegativity"), s.chi_mean, s.chi_std) in
+  let eta_t = cmath.zscore(rec.get(row, "hardness"), s.eta_mean, s.eta_std) in
+  let alpha_raw = rec.get(row, "alpha_au") in
+  let alpha_val = if alpha_raw == null then s.alpha_mean else alpha_raw in
+  let alpha_t = cmath.zscore(alpha_val, s.alpha_mean, s.alpha_std) in
+  cmath.phi_star(chi_t, eta_t, alpha_t, config.w_chi, config.w_eta, config.w_alpha)
+}
+
+fn classify_phi_star(phi_star, config) {
+  let phase = cphase.classify_phi(phi_star, config.phi_threshold) in
+  {
+    phase: phase,
+    color: cphase.phase_color(phase)
+  }
+}
+
+{
+  valid_rows: valid_rows,
+  sum_field: sum_field,
+  mean_field: mean_field,
+  variance_field: variance_field,
+  std_field: std_field,
+  fit_calibrator: fit_calibrator,
+  compute_phi_star: compute_phi_star,
+  classify_phi_star: classify_phi_star
+}

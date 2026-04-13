@@ -1,0 +1,7 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"cid":"sha256:4d5cf38fab2a546127f9c38c7b560b5b0165ca3469aaf40af72ab324f432e335","kind":"std","name":"std/csv","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:f92b36207a232c7ba652879aa64ac2186a7657e2a641fe0145d8b38d2238f93a","t":"witnessed_failure"}
+{"cid":"sha256:2148bb33ad733d07f59aded79e6857d303d61e1680915c96e2056fb732398f8a","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME unbound var: type -- did you forget to import? Try: import(\"std/type\") as type","t":"error"}

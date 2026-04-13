@@ -1,0 +1,22 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+import("std/float") as float
+import("std/str") as str
+
+fn main() {
+  let result = io.read_file("data/pubchem_periodic_table.csv") in
+  let text = rec.get(result, "ok") in
+  let rows = csv.parse(text) in
+  let headers = list.head(rows) in
+  let data_rows = list.tail(rows) in
+  let first_row = list.head(data_rows) in
+  
+  // Get AtomicNumber as text
+  let atomic_num_text = list.head(first_row) in
+  let atomic_num_float = float.from_text(atomic_num_text) in
+  let result_str = str.from(atomic_num_float) in
+  io.write_file("out/float_result.txt", result_str)
+}
+main()

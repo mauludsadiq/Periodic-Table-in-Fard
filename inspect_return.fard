@@ -1,0 +1,9 @@
+import("std/io") as io
+import("std/type") as type
+
+fn main() {
+  let raw = io.read_file("data/pubchem_periodic_table.csv") in
+  let t = type.of(raw) in
+  io.write_file("out/type.txt", t)
+}
+main()

@@ -1,0 +1,8 @@
+import("std/io") as io
+
+fn main() {
+  let _ = io.write_file("out/test.txt", "hello")
+  "ok"
+}
+
+main()

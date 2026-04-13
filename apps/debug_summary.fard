@@ -1,0 +1,11 @@
+import("std/str") as str
+import("std/cast") as cast
+
+fn main() {
+  let c = { total: 10, e_phase: 5, z_phase: 3, one_phase: 2 }
+  let test1 = cast.text(c.total)
+  let test2 = "total elements=" + test1
+  let result = str.join([test2], "\n")
+  "ok"
+}
+main()

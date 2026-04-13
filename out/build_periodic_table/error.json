@@ -1,0 +1,1 @@
+{"code":"ERROR_BADARG","message":"ERROR_BADARG list.concat expects 1 arg","partial_trace_digest":"sha256:262ba5c4a0cf6f2d4a9f96aac84e32f7ab8c6601d14ff4d2e06be95d9f5371db","span":{"col":6,"file":"apps/build_periodic_table.fard","line":52},"witnessed_failure":true}

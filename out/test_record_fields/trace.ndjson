@@ -1,0 +1,5 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"code":"ERROR_BADARG","partial_trace_digest":"sha256:103d5797d88e3da86447d7176d7a6ece6786097bf3d88cd34a655f01092eeb78","t":"witnessed_failure"}
+{"cid":"sha256:17f8dc226e4a3bb06a0bf880a7ca4ec4ac83fee2553d5b1e3d290907c3bab59d","t":"module_graph"}
+{"code":"ERROR_BADARG","message":"ERROR_BADARG io.write_file content must be string","t":"error"}

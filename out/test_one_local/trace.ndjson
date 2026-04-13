@@ -1,0 +1,4 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:063ff70770ed45115b76567d9b686a23a9bb1eaddac86fd1b57fa33c4344378f","t":"witnessed_failure"}
+{"cid":"sha256:f3cdd6413c90c9fd297691806d06048f5a40f8aa055c7e7e61423a3c5153be37","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME No such file or directory (os error 2)","t":"error"}

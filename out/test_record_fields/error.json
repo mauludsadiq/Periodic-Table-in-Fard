@@ -1,0 +1,1 @@
+{"code":"ERROR_BADARG","message":"ERROR_BADARG io.write_file content must be string","partial_trace_digest":"sha256:103d5797d88e3da86447d7176d7a6ece6786097bf3d88cd34a655f01092eeb78","span":{"col":6,"file":"test_record_fields.fard","line":9},"witnessed_failure":true}

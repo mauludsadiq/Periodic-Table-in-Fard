@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"bad binop +","partial_trace_digest":"sha256:c027ee69ff1fc9a39143358f40ac3477fb6cf67a0b6245d771a143f49bedff67","span":{"col":6,"file":"test_field_types.fard","line":27},"witnessed_failure":true}

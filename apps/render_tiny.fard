@@ -1,0 +1,17 @@
+import("std/io") as io
+import("./packages/collapse-render/src/scene") as scene
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let elements = [
+    { phase: "E" },
+    { phase: "Z" },
+    { phase: "1" },
+    { phase: "E" }
+  ] in
+  let layout = { width: 80, height: 80, cols: 2, cell: 24, margin_x: 8, margin_y: 8 } in
+  let text = scene.render_ppm_text(elements, layout) in
+  io.write_file("out/tiny.ppm", text)
+}
+
+main()

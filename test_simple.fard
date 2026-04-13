@@ -1,0 +1,3 @@
+import("./test_lib") as lib
+fn main() { lib.hello() }
+main()

@@ -1,0 +1,35 @@
+fn rows() {
+  [
+    { formula: "NaCl",  observable: "epsilon_r_static", value: 5.9 },
+    { formula: "KBr",   observable: "epsilon_r_static", value: 4.9 },
+    { formula: "MgO",   observable: "epsilon_r_static", value: 9.8 },
+    { formula: "CaF2",  observable: "epsilon_r_static", value: 6.8 },
+    { formula: "LiF",   observable: "epsilon_r_static", value: 9.0 },
+
+    { formula: "H2O",   observable: "epsilon_r_static", value: 80.1 },
+    { formula: "HCl",   observable: "epsilon_r_static", value: 4.6 },
+    { formula: "NH3",   observable: "epsilon_r_static", value: 22.0 },
+    { formula: "SO2",   observable: "epsilon_r_static", value: 17.3 },
+    { formula: "PCl3",  observable: "epsilon_r_static", value: 3.8 },
+
+    { formula: "SiO2",  observable: "epsilon_r_static", value: 3.9 },
+    { formula: "BN",    observable: "epsilon_r_static", value: 4.5 },
+    { formula: "SiC",   observable: "epsilon_r_static", value: 9.7 },
+    { formula: "AlN",   observable: "epsilon_r_static", value: 8.5 },
+
+    { formula: "CuZn",  observable: "epsilon_r_static", value: 1.0 },
+    { formula: "NiAl",  observable: "epsilon_r_static", value: 1.0 },
+    { formula: "FeAl",  observable: "epsilon_r_static", value: 1.0 },
+    { formula: "TiAl",  observable: "epsilon_r_static", value: 1.0 },
+
+    { formula: "FeO",   observable: "epsilon_r_static", value: 12.0 },
+    { formula: "Fe2O3", observable: "epsilon_r_static", value: 15.0 },
+    { formula: "TiO2",  observable: "epsilon_r_static", value: 80.0 },
+    { formula: "MnO2",  observable: "epsilon_r_static", value: 10.0 },
+    { formula: "CuO",   observable: "epsilon_r_static", value: 18.0 }
+  ]
+}
+
+{
+  rows: rows
+}

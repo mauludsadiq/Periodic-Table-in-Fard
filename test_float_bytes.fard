@@ -1,0 +1,11 @@
+import("std/io") as io
+import("std/float") as float
+import("std/bytes") as bytes
+import("std/str") as str
+
+fn main() {
+  let result = float.from_text("42") in
+  let result_str = bytes.to_str(result) in
+  io.write_file("out/float_bytes.txt", result_str)
+}
+main()

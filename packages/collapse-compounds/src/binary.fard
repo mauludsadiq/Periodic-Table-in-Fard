@@ -1,0 +1,37 @@
+import("../../collapse-elements/src/analysis") as analysis
+import("../../collapse-core/src/phase") as cphase
+import("../../collapse-core/src/math") as cmath
+
+fn classify_compound_phase(phi_value, threshold) {
+  cphase.classify_phi(phi_value, threshold)
+}
+
+fn binary_compound(table, config, symbol_a, symbol_b, n_a, n_b) {
+  let a_opt = analysis.by_symbol(table.elements, symbol_a) in
+  let b_opt = analysis.by_symbol(table.elements, symbol_b) in
+  let a = a_opt.some in
+  let b = b_opt.some in
+  let phi_a = a.phi_star in
+  let phi_b = b.phi_star in
+  let phi_avg = cmath.weighted_mean2(phi_a, phi_b, n_a, n_b) in
+  let delta_phi = cmath.absf(phi_b - phi_a) in
+  let ionicity = if delta_phi == 0.0 then 0.0 else delta_phi / (delta_phi + 1.0) in
+  let phi_compound = phi_avg - ionicity in
+  {
+    symbol_a: symbol_a,
+    symbol_b: symbol_b,
+    stoichiometry: { a: n_a, b: n_b },
+    phi_a: phi_a,
+    phi_b: phi_b,
+    phi_avg: phi_avg,
+    delta_phi: delta_phi,
+    ionicity: ionicity,
+    phi_compound: phi_compound,
+    phase: classify_compound_phase(phi_compound, config.phi_threshold)
+  }
+}
+
+{
+  classify_compound_phase: classify_compound_phase,
+  binary_compound: binary_compound
+}

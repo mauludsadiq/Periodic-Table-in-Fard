@@ -1,0 +1,68 @@
+import("std/list") as list
+import("std/rec") as rec
+import("../../collapse-core/src/phase") as cphase
+
+fn spin_moment_table() {
+  [
+    { symbol: "H",  moment: 1.0 },
+    { symbol: "He", moment: 0.0 },
+    { symbol: "Li", moment: 1.0 },
+    { symbol: "Be", moment: 0.0 },
+    { symbol: "B",  moment: 1.0 },
+    { symbol: "C",  moment: 0.0 },
+    { symbol: "N",  moment: 3.0 },
+    { symbol: "O",  moment: 2.0 },
+    { symbol: "F",  moment: 1.0 },
+    { symbol: "Na", moment: 1.0 },
+    { symbol: "Mg", moment: 0.0 },
+    { symbol: "Al", moment: 1.0 },
+    { symbol: "Si", moment: 0.0 },
+    { symbol: "P",  moment: 3.0 },
+    { symbol: "S",  moment: 2.0 },
+    { symbol: "Cl", moment: 1.0 },
+    { symbol: "Fe", moment: 2.2 },
+    { symbol: "Co", moment: 1.7 },
+    { symbol: "Ni", moment: 0.6 },
+    { symbol: "Mn", moment: 5.0 },
+    { symbol: "Cr", moment: 3.0 },
+    { symbol: "Cu", moment: 0.5 },
+    { symbol: "Gd", moment: 7.9 },
+    { symbol: "Dy", moment: 10.6 }
+  ]
+}
+
+fn find_spin_moment(symbol) {
+  let matches = list.filter(spin_moment_table(), fn(row) {
+    rec.get(row, "symbol") == symbol
+  }) in
+  if list.len(matches) == 0 then 0.0 else rec.get(list.head(matches), "moment")
+}
+
+fn max_spin_moment() {
+  10.6
+}
+
+fn elemental_spin_phase(phi_spin) {
+  cphase.classify_spin(phi_spin, 0.10, 0.60)
+}
+
+fn elemental_spin_record(element) {
+  let moment = find_spin_moment(element.symbol) in
+  let phi_spin = moment / max_spin_moment() in
+  {
+    Z: element.Z,
+    symbol: element.symbol,
+    name: element.name,
+    spin_moment: moment,
+    phi_spin: phi_spin,
+    spin_phase: elemental_spin_phase(phi_spin)
+  }
+}
+
+{
+  spin_moment_table: spin_moment_table,
+  find_spin_moment: find_spin_moment,
+  max_spin_moment: max_spin_moment,
+  elemental_spin_phase: elemental_spin_phase,
+  elemental_spin_record: elemental_spin_record
+}

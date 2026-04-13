@@ -1,0 +1,5 @@
+import("std/str") as str
+import("./packages/collapse-core/src/types") as ctypes
+
+fn main() { "ok" }
+main()

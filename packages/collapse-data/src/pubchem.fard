@@ -1,0 +1,47 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+import("std/cast") as cast
+import("std/str") as str
+
+fn load_pubchem(path) {
+  let result = io.read_file(path) in
+  let text = rec.get(result, "ok") in
+  let rows = csv.parse(text) in
+  let headers = list.head(rows) in
+  let data_rows = list.tail(rows) in
+  list.map(data_rows, fn(row) {
+    let record = {} in
+    list.fold(list.zip(headers, row), record, fn(acc, pair) {
+      let key = list.head(pair) in
+      let value = list.head(list.tail(pair)) in
+      rec.set(acc, key, value)
+    })
+  })
+}
+
+fn normalize_pubchem_row(row) {
+  let atomic_num = cast.int(rec.get(row, "AtomicNumber")) in
+  let ion_energy = cast.float(rec.get(row, "IonizationEnergy")) in
+  let electron_aff = cast.float(rec.get(row, "ElectronAffinity")) in
+  let electroneg = cast.float(rec.get(row, "Electronegativity")) in
+  {
+    AtomicNumber: atomic_num,
+    Symbol: rec.get(row, "Symbol"),
+    Name: rec.get(row, "Name"),
+    IonizationEnergy: ion_energy,
+    ElectronAffinity: electron_aff,
+    Electronegativity: electroneg
+  }
+}
+
+fn normalize_pubchem(rows) {
+  list.map(rows, normalize_pubchem_row)
+}
+
+{
+  load_pubchem: load_pubchem,
+  normalize_pubchem_row: normalize_pubchem_row,
+  normalize_pubchem: normalize_pubchem
+}

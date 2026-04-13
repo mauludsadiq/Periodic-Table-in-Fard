@@ -1,0 +1,15 @@
+import("std/io") as io
+import("std/json") as json
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-validate/src/compound_validation") as cv
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let config = ctypes.build_config() in
+  let table = ptable.build_table("data/pubchem_periodic_table.csv", "data/polarizability_2020.csv", config) in
+  let rows = cv.join_compound_truth(table, config) in
+  io.write_file("out/compound_validation.json", json.encode(rows))
+}
+
+main()

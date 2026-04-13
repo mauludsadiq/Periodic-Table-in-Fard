@@ -1,0 +1,8 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"cid":"sha256:4d5cf38fab2a546127f9c38c7b560b5b0165ca3469aaf40af72ab324f432e335","kind":"std","name":"std/csv","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:d7cc2a63ed9bd059f7de1c825166dd470becd77966c30aba2af331278be5cb1c","t":"witnessed_failure"}
+{"cid":"sha256:f454686315003f7015b01b4a702a0b0d177f72736c2fdcd6369d0e38b98c69a0","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME unbound var: type -- did you forget to import? Try: import(\"std/type\") as type","t":"error"}

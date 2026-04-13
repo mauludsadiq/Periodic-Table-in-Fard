@@ -1,0 +1,3 @@
+import("/Users/g.bogans/Downloads/Periodic Table in Fard/packages/collapse-core/src/types.fard") as types
+fn main() { "ok" }
+main()

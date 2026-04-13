@@ -1,0 +1,20 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+import("std/cast") as cast
+
+fn main() {
+  let result = io.read_file("data/pubchem_periodic_table.csv") in
+  let text = rec.get(result, "ok") in
+  let rows = csv.parse(text) in
+  let headers = list.head(rows) in
+  let data_rows = list.tail(rows) in
+  let first_row = list.head(data_rows) in
+  let atomic_num_text = list.head(first_row) in
+  let atomic_num = cast.float(atomic_num_text) in
+  let doubled = atomic_num * 2.0 in
+  let result_text = cast.text(doubled) in
+  io.write_file("out/doubled.txt", result_text)
+}
+main()

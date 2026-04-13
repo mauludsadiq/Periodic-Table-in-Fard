@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"no member 'phi_star' -- available: some","partial_trace_digest":"sha256:b54ba89d881ee0e26b48db4b18e273bee29e708736685bfbf6bd75a2e65ea707","span":{"col":6,"file":"apps/build_binary_compounds.fard","line":21},"witnessed_failure":true}

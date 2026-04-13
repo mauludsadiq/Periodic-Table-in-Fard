@@ -1,0 +1,10 @@
+import("std/io") as io
+import("./packages/collapse-core/src/types") as ctypes
+
+fn main() {
+  let config = ctypes.build_config() in
+  let _ = io.write_file("out/config.txt", "config built") in
+  "ok"
+}
+
+main()

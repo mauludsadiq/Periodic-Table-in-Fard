@@ -1,0 +1,34 @@
+import("std/math") as math
+import("std/float") as float
+import("./spin") as spin
+import("../../collapse-core/src/phase") as cphase
+
+fn logistic(x, k, x0) {
+  1.0 / (1.0 + math.exp(0.0 - (k * (x - x0))))
+}
+
+fn tight_spin_phase(phi_spin) {
+  cphase.classify_spin(phi_spin, 0.08, 0.45)
+}
+
+fn tight_spin_record(element) {
+  let base = spin.elemental_spin_record(element) in
+  let x = base.spin_moment / 10.6 in
+  let f0 = logistic(0.0, 8.0, 0.3) in
+  let fx = logistic(x, 8.0, 0.3) in
+  let phi_spin_tight = fx - f0 in
+  {
+    Z: element.Z,
+    symbol: element.symbol,
+    name: element.name,
+    spin_moment: base.spin_moment,
+    phi_spin: phi_spin_tight,
+    spin_phase: tight_spin_phase(phi_spin_tight)
+  }
+}
+
+{
+  logistic: logistic,
+  tight_spin_phase: tight_spin_phase,
+  tight_spin_record: tight_spin_record
+}

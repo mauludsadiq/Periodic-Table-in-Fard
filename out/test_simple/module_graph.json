@@ -1,0 +1,1 @@
+{"edges":[{"from":0,"kind":"import","to":1}],"nodes":[{"digest":"sha256:33378d71cbd05d068c9b30acc52f602b6dbe21cfd77e61c763025db5b9946c5b","id":0,"kind":"rel","path":"test_simple.fard","spec":"test_simple.fard"},{"id":1,"kind":"rel","spec":"./test_lib"}]}

@@ -1,0 +1,39 @@
+import("std/list") as list
+import("std/str") as str
+import("std/rec") as rec
+
+fn by_symbol(elements, symbol) {
+  list.find(elements, fn(e) {
+    rec.get(e, "symbol") == symbol
+  })
+}
+
+fn by_phase(elements, phase) {
+  list.filter(elements, fn(e) {
+    rec.get(e, "phase") == phase
+  })
+}
+
+fn reaction_delta_phi(a, b) {
+  rec.get(b, "phi_star") - rec.get(a, "phi_star")
+}
+
+fn z_belt_elements(elements, window) {
+  list.filter(elements, fn(e) {
+    let phi = rec.get(e, "phi_star") in
+    (phi > (0.0 - window)) && (phi < window) && (rec.get(e, "phase") == "Z")
+  })
+}
+
+fn summary_line(e) {
+  "Z=${e.Z} ${e.symbol} ${e.name} Φ*=${e.phi_star} phase=${e.phase} group=${e.group} period=${e.period}"
+}
+
+
+{
+  by_symbol: by_symbol,
+  by_phase: by_phase,
+  reaction_delta_phi: reaction_delta_phi,
+  z_belt_elements: z_belt_elements,
+  summary_line: summary_line
+}

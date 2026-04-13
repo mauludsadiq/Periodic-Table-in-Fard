@@ -1,0 +1,6 @@
+chi_mean=float
+chi_std=float
+eta_mean=float
+eta_std=float
+alpha_mean=float
+alpha_std=float

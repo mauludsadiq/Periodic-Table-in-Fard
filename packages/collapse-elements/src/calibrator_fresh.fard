@@ -1,0 +1,12 @@
+import("std/list") as list
+import("std/float") as float
+import("std/rec") as rec
+import("../../collapse-core/src/math") as cmath
+import("../../collapse-core/src/phase") as cphase
+import("../../collapse-core/src/types") as ctypes
+
+fn test_func(x) { x }
+
+{
+  test_func: test_func
+}

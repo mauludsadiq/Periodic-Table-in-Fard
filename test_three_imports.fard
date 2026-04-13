@@ -1,0 +1,5 @@
+import("packages/collapse-core/src/math") as math
+import("packages/collapse-core/src/types") as types
+import("packages/collapse-core/src/phase") as phase
+fn main() { "ok" }
+main()

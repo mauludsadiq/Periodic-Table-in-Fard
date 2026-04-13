@@ -1,0 +1,57 @@
+import("std/list") as list
+import("../../collapse-compounds/src/binary") as binary
+import("./ground_truth") as truth
+
+fn compound_rows(table, config) {
+  [
+    { formula: "NaCl",  row: binary.binary_compound(table, config, "Na", "Cl", 1.0, 1.0) },
+    { formula: "KBr",   row: binary.binary_compound(table, config, "K",  "Br", 1.0, 1.0) },
+    { formula: "MgO",   row: binary.binary_compound(table, config, "Mg", "O",  1.0, 1.0) },
+    { formula: "CaF2",  row: binary.binary_compound(table, config, "Ca", "F",  1.0, 2.0) },
+    { formula: "LiF",   row: binary.binary_compound(table, config, "Li", "F",  1.0, 1.0) },
+
+    { formula: "H2O",   row: binary.binary_compound(table, config, "H",  "O",  2.0, 1.0) },
+    { formula: "HCl",   row: binary.binary_compound(table, config, "H",  "Cl", 1.0, 1.0) },
+    { formula: "NH3",   row: binary.binary_compound(table, config, "N",  "H",  1.0, 3.0) },
+    { formula: "SO2",   row: binary.binary_compound(table, config, "S",  "O",  1.0, 2.0) },
+    { formula: "PCl3",  row: binary.binary_compound(table, config, "P",  "Cl", 1.0, 3.0) },
+
+    { formula: "SiO2",  row: binary.binary_compound(table, config, "Si", "O",  1.0, 2.0) },
+    { formula: "BN",    row: binary.binary_compound(table, config, "B",  "N",  1.0, 1.0) },
+    { formula: "SiC",   row: binary.binary_compound(table, config, "Si", "C",  1.0, 1.0) },
+    { formula: "AlN",   row: binary.binary_compound(table, config, "Al", "N",  1.0, 1.0) },
+
+    { formula: "CuZn",  row: binary.binary_compound(table, config, "Cu", "Zn", 1.0, 1.0) },
+    { formula: "NiAl",  row: binary.binary_compound(table, config, "Ni", "Al", 1.0, 1.0) },
+    { formula: "FeAl",  row: binary.binary_compound(table, config, "Fe", "Al", 1.0, 1.0) },
+    { formula: "TiAl",  row: binary.binary_compound(table, config, "Ti", "Al", 1.0, 1.0) },
+
+    { formula: "FeO",   row: binary.binary_compound(table, config, "Fe", "O",  1.0, 1.0) },
+    { formula: "Fe2O3", row: binary.binary_compound(table, config, "Fe", "O",  2.0, 3.0) },
+    { formula: "TiO2",  row: binary.binary_compound(table, config, "Ti", "O",  1.0, 2.0) },
+    { formula: "MnO2",  row: binary.binary_compound(table, config, "Mn", "O",  1.0, 2.0) },
+    { formula: "CuO",   row: binary.binary_compound(table, config, "Cu", "O",  1.0, 1.0) }
+  ]
+}
+
+fn join_compound_truth(table, config) {
+  let calc = compound_rows(table, config) in
+  list.map(truth.compound_truth_rows(), fn(t) {
+    let matches = list.filter(calc, fn(c) { c.formula == t.formula }) in
+    let c = list.head(matches) in
+    {
+      formula: t.formula,
+      true_class: t.true_class,
+      phi_avg: c.row.phi_avg,
+      delta_phi: c.row.delta_phi,
+      ionicity: c.row.ionicity,
+      phi_compound: c.row.phi_compound,
+      phase: c.row.phase
+    }
+  })
+}
+
+{
+  compound_rows: compound_rows,
+  join_compound_truth: join_compound_truth
+}

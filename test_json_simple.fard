@@ -1,0 +1,9 @@
+import("std/json") as json
+import("std/io") as io
+
+fn main() {
+  let test = { "name": "Hydrogen", "number": 1 }
+  let encoded = json.encode(test)
+  io.write_file("out/test.json", encoded)
+}
+main()

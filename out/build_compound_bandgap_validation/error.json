@@ -1,0 +1,1 @@
+{"code":"ERROR_OOB","message":"ERROR_OOB list.head on empty list","partial_trace_digest":"sha256:b27aeef48197e35254f22fb4a88f25850ab171d19a7ecb35891a5315f4e0ed2b","span":{"col":6,"file":"apps/build_compound_bandgap_validation.fard","line":17},"witnessed_failure":true}

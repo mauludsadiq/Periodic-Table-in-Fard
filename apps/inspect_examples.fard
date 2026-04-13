@@ -1,0 +1,34 @@
+import("std/io") as io
+import("std/list") as list
+import("std/str") as str
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-elements/src/analysis") as analysis
+import("./packages/collapse-elements/src/export") as exp
+
+fn unwrap_find(result, fallback) {
+  if result == null then fallback
+  else if result.some != null then result.some
+  else fallback
+}
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let table = ptable.build_table("data/pubchem_periodic_table.csv", "data/polarizability_2020.csv", ctypes.build_config()) in
+  let c = unwrap_find(analysis.by_symbol(table.elements, "C"), { symbol: "?", name: "missing", phi_star: 0.0, phase: "Z", group: 0, period: 0, Z: 0 }) in
+  let na = unwrap_find(analysis.by_symbol(table.elements, "Na"), { symbol: "?", name: "missing", phi_star: 0.0, phase: "Z", group: 0, period: 0, Z: 0 }) in
+  let cl = unwrap_find(analysis.by_symbol(table.elements, "Cl"), { symbol: "?", name: "missing", phi_star: 0.0, phase: "Z", group: 0, period: 0, Z: 0 }) in
+  let lines = [
+    "Example summaries",
+    "=================",
+    analysis.summary_line(c),
+    analysis.summary_line(na),
+    analysis.summary_line(cl),
+    "Na->Cl delta=${analysis.reaction_delta_phi(na, cl)}"
+  ] in
+  let text = str.join(lines, "\n") in
+  let _ = exp.write_text("out/examples_summary.txt", text) in
+  { ok: true, output: "out/examples_summary.txt" }
+}
+
+main()

@@ -1,0 +1,7 @@
+import("std/io") as io
+
+fn main() {
+  let raw = io.read_file("data/pubchem_periodic_table.csv") in
+  io.write_file("out/raw.txt", "got data")
+}
+main()

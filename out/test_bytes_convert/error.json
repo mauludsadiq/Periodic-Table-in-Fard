@@ -1,0 +1,1 @@
+{"code":"ERROR_BADARG","message":"ERROR_BADARG bytes.to_str expects bytes","partial_trace_digest":"sha256:8a3e2b77e0952785be2c3848e10b06470347166b4d27a89a13ce57cae2a67efe","span":{"col":6,"file":"test_bytes_convert.fard","line":11},"witnessed_failure":true}

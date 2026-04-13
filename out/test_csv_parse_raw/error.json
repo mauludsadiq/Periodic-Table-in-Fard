@@ -1,0 +1,1 @@
+{"code":"ERROR_BADARG","message":"ERROR_BADARG csv.parse expects text","partial_trace_digest":"sha256:ae43dc9280a72fdd10f6706eb9dc8fcab6db63e18bb7274fa106f0c18eb68f91","span":{"col":6,"file":"test_csv_parse_raw.fard","line":10},"witnessed_failure":true}

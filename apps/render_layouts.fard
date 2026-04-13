@@ -1,0 +1,23 @@
+import("std/io") as io
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-render/src/ppm") as ppm
+import("./packages/collapse-render/src/layouts") as layouts
+import("./packages/collapse-render/src/scene") as scene
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let config = ctypes.build_config() in
+  let table = ptable.build_table("data/pubchem_periodic_table.csv", "data/polarizability_2020.csv", config) in
+
+  let phone = scene.render_elements(table.elements, layouts.layout_phone()) in
+  let tablet = scene.render_elements(table.elements, layouts.layout_tablet()) in
+  let desktop = scene.render_elements(table.elements, layouts.layout_desktop()) in
+
+  let _ = ppm.write_ppm("out/periodic_phone.ppm", phone) in
+  let _ = ppm.write_ppm("out/periodic_tablet.ppm", tablet) in
+  let _ = ppm.write_ppm("out/periodic_desktop.ppm", desktop) in
+  "ok"
+}
+
+main()

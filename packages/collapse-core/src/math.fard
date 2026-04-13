@@ -1,0 +1,43 @@
+import("std/float") as float
+import("std/cast") as cast
+
+fn safe_electron_affinity(a) {
+  if a == null then 0.0
+  else if a < 0.0 then 0.0
+  else a
+}
+
+fn hardness(i, a) {
+  i - safe_electron_affinity(a)
+}
+
+fn zscore(x, mean, std) {
+  if std == 0.0 then 0.0
+  else ((x - mean) / std)
+}
+
+fn phi_star(chi_t, eta_t, alpha_t, w_chi, w_eta, w_alpha) {
+  (w_chi * chi_t) - (w_eta * eta_t) + (w_alpha * alpha_t)
+}
+
+fn weighted_mean2(x, y, a, b) {
+  (((a * x) + (b * y)) / (a + b))
+}
+
+fn absf(x) {
+  if x < 0.0 then 0.0 - x else x
+}
+
+fn logistic(x, k, x0) {
+  (1.0 / (1.0 + float.exp(0.0 - (k * (x - x0)))))
+}
+
+{
+  safe_electron_affinity: safe_electron_affinity,
+  hardness: hardness,
+  zscore: zscore,
+  phi_star: phi_star,
+  weighted_mean2: weighted_mean2,
+  absf: absf,
+  logistic: logistic
+}

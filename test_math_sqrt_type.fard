@@ -1,0 +1,10 @@
+import("std/io") as io
+import("std/type") as type
+import("std/math") as math
+
+fn main() {
+  let v = math.sqrt(9.0) in
+  io.write_file("out/math_sqrt_type.txt", type.of(v))
+}
+
+main()

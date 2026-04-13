@@ -1,0 +1,9 @@
+import("std/cast") as cast
+import("std/io") as io
+
+fn main() {
+  let num = 42
+  let text = cast.text(num)
+  io.write_file("out/cast_int_result.txt", text)
+}
+main()

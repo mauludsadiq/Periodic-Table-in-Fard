@@ -1,0 +1,3 @@
+import("./packages/collapse-core/src/types") as ctypes
+fn main() { ctypes.build_config() }
+main()

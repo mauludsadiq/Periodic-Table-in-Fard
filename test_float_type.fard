@@ -1,0 +1,11 @@
+import("std/io") as io
+import("std/float") as float
+import("std/type") as type
+import("std/str") as str
+
+fn main() {
+  let result = float.from_text("42") in
+  let result_type = type.of(result) in
+  io.write_file("out/float_type.txt", result_type)
+}
+main()

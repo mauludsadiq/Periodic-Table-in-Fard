@@ -1,0 +1,1 @@
+import("./test_local") as lib\nfn main() { lib.hello() }\nmain()

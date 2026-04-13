@@ -1,0 +1,1 @@
+{"edges":[{"from":0,"kind":"import","to":1}],"nodes":[{"digest":"sha256:c85862a39c0371cf6e7e1c29ceaf3e077ca46fa9bed6934d769439f178787b44","id":0,"kind":"rel","path":"test_interpolation.fard","spec":"test_interpolation.fard"},{"digest":"sha256:48d83aff4432560e3cbbbbce7793f5a20c0912b8a7d283c2fa52a18e9dd75273","id":1,"kind":"std","spec":"std/cast"}]}

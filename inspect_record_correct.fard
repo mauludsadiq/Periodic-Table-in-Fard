@@ -1,0 +1,16 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/list") as list
+import("std/type") as type
+import("std/str") as str
+
+fn main() {
+  let raw = io.read_file("data/pubchem_periodic_table.csv") in
+  let keys = rec.keys(raw) in
+  let first_key = list.head(keys) in
+  let value = rec.get(raw, first_key) in
+  let value_type = type.of(value) in
+  let result = str.join(["Key: ", first_key, ", Type: ", value_type], "") in
+  io.write_file("out/info.txt", result)
+}
+main()

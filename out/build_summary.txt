@@ -1,0 +1,6 @@
+Periodic Table in FARD
+======================
+total elements=118
+E phase=33
+Z phase=66
+1 phase=19

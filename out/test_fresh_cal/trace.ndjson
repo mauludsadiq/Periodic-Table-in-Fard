@@ -1,0 +1,7 @@
+{"cid":"sha256:ed5c6bbaf386ffe27394f1a57679117b5182c351aa232acb89684cb7d2d0c209","kind":"rel","name":"packages/collapse-elements/src/calibrator_fresh","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:0df40f4af431dbae20b5387c50714dff23971d7b29a91f67bee8abd9a5ecaf25","t":"witnessed_failure"}
+{"cid":"sha256:844dff1645136fa56025311004ff6de2fa202bde49306bcbc173b0ed8b610ed2","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME No such file or directory (os error 2)","t":"error"}

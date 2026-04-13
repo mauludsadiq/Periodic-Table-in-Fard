@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"vm: type error in <","partial_trace_digest":"sha256:39e00ce3a855e3274a83817a253cfa40b41dbae86e3f0bba81f76d426bf2fb9e","span":{"col":6,"file":"test_build_elements.fard","line":30},"witnessed_failure":true}

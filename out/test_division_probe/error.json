@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"bad binop /","partial_trace_digest":"sha256:392729dba7de6061e02b486181c77b07799d3b282a910734e74d902440310d4d","span":{"col":6,"file":"test_division_probe.fard","line":14},"witnessed_failure":true}

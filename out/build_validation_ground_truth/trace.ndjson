@@ -1,0 +1,4 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:079b7806d7457a3a32a8dd66d0c8ea06bfdfa5866e33903a291cc43450535630","kind":"std","name":"std/json","t":"module_resolve"}
+{"cid":"sha256:462a954797c5e5319380870c91316052d8a644675e464cfbda8926953c8b44c8","kind":"rel","name":"./packages/collapse-validate/src/ground_truth","t":"module_resolve"}
+{"cid":"sha256:f5472dde72d802d8a32ba595b7b66cd2b870f7819ee182a32530ad833c6f75aa","t":"module_graph"}

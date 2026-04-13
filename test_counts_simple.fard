@@ -1,0 +1,16 @@
+import("std/list") as list
+import("./packages/collapse-elements/src/analysis") as analysis
+
+fn main() {
+  let elements = [] in
+  let total = list.len(elements) in
+  let e_phase = list.len(analysis.by_phase(elements, "E")) in
+  {
+    total: total,
+    e_phase: e_phase,
+    z_phase: 0,
+    one_phase: 0
+  }
+}
+
+main()

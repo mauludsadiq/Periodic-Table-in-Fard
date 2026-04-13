@@ -1,0 +1,14 @@
+import("std/io") as io
+import("std/float") as float
+import("std/cast") as cast
+
+fn main() {
+  let a = 10.0 in
+  let b1 = cast.float(2) in
+  let r1 = a / b1 in
+  let b2 = float.from_int(2) in
+  let r2 = a / b2 in
+  io.write_file("out/div_probe.txt", "ok")
+}
+
+main()

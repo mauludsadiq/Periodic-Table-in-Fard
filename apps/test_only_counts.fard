@@ -1,0 +1,22 @@
+import("std/list") as list
+import("std/str") as str
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-elements/src/export") as exp
+import("./packages/collapse-elements/src/analysis") as analysis
+
+fn counts(elements) {
+  let total = list.len(elements) in
+  let e_phase = list.len(analysis.by_phase(elements, "E")) in
+  let z_phase = list.len(analysis.by_phase(elements, "Z")) in
+  let one_phase = list.len(analysis.by_phase(elements, "1")) in
+  {
+    total: total,
+    e_phase: e_phase,
+    z_phase: z_phase,
+    one_phase: one_phase
+  }
+}
+
+fn main() { "ok" }
+main()

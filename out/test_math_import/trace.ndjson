@@ -1,0 +1,3 @@
+{"cid":"sha256:e6d6abafa5374cac6472a6a5dfa15b5b395c8f0bb7e6ee740ab5aaf78d0513b7","kind":"rel","name":"packages/collapse-core/src/math","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:1535945186623325f1a70b1f825239c85f3d4b2380a560ccef7dcf2005b908ab","t":"module_graph"}

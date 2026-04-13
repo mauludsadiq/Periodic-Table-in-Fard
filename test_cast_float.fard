@@ -1,0 +1,10 @@
+import("std/cast") as cast
+import("std/io") as io
+
+fn main() {
+  let a = cast.float("42")
+  let b = cast.float("1")
+  let sum = a + b
+  io.write_file("out/cast_sum.txt", cast.text(sum))
+}
+main()

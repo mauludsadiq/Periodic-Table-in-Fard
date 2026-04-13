@@ -1,0 +1,15 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/type") as type
+import("std/list") as list
+import("./packages/collapse-data/src/pubchem") as pubchem
+
+fn main() {
+  let rows0 = pubchem.load_pubchem("data/pubchem_periodic_table.csv") in
+  let rows = pubchem.normalize_pubchem(rows0) in
+  let row = list.head(rows) in
+  let z = rec.get(row, "AtomicNumber") in
+  io.write_file("out/atomicnumber_type.txt", type.of(z))
+}
+
+main()

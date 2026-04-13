@@ -1,0 +1,23 @@
+import("std/list") as list
+import("./compound_dielectric_observables") as obs
+
+fn join_dielectric(rows) {
+  list.map(rows, fn(r) {
+    let matches = list.filter(obs.rows(), fn(o) { o.formula == r.formula }) in
+    let o = list.head(matches) in
+    {
+      formula: r.formula,
+      true_class: r.true_class,
+      phi_avg: r.phi_avg,
+      delta_phi: r.delta_phi,
+      ionicity: r.ionicity,
+      phi_compound: r.phi_compound,
+      phase: r.phase,
+      epsilon_r_static: o.value
+    }
+  })
+}
+
+{
+  join_dielectric: join_dielectric
+}

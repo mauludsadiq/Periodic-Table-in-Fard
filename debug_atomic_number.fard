@@ -1,0 +1,22 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+import("std/type") as type
+import("std/str") as str
+
+fn main() {
+  let result = io.read_file("data/pubchem_periodic_table.csv") in
+  let text = rec.get(result, "ok") in
+  let rows = csv.parse(text) in
+  let headers = list.head(rows) in
+  let data_rows = list.tail(rows) in
+  let first_row = list.head(data_rows) in
+  
+  // Get AtomicNumber value
+  let atomic_num = list.head(first_row) in
+  let atomic_num_type = type.of(atomic_num) in
+  let is_scalar = if atomic_num_type == "text" then "yes" else "no" in
+  io.write_file("out/atomic_num_info.txt", str.join(["Type: ", atomic_num_type, ", Scalar: ", is_scalar], ""))
+}
+main()

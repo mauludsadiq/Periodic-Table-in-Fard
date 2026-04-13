@@ -1,0 +1,14 @@
+import("std/io") as io
+import("std/type") as type
+import("std/str") as str
+import("./packages/collapse-core/src/math") as math
+
+fn main() {
+  let z = math.zscore(10.0, 5.0, 2.0) in
+  let lines = [
+    "type=${type.of(z)}"
+  ] in
+  io.write_file("out/zscore_runtime.txt", str.join(lines, "\n"))
+}
+
+main()

@@ -1,0 +1,4 @@
+import("packages/collapse-core/src/math") as math
+import("packages/collapse-core/src/types") as types
+fn main() { "ok" }
+main()

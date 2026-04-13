@@ -1,0 +1,274 @@
+{
+  "summary": {
+    "total_compounds": 23,
+    "accuracy_2d_centroid": 0.609,
+    "chance_accuracy": 0.2,
+    "improvement_over_chance": 3.04,
+    "classes": [
+      "IONIC",
+      "POLAR_COVALENT",
+      "NETWORK_COVALENT",
+      "INTERMETALLIC",
+      "TM_OXIDE"
+    ]
+  },
+  "centroids_2d": {
+    "IONIC": {
+      "phi_avg": 0.7607179772170442,
+      "delta_phi": 1.0509172083899145,
+      "n": 5
+    },
+    "POLAR_COVALENT": {
+      "phi_avg": 0.416254325266865,
+      "delta_phi": 0.8292928559896724,
+      "n": 5
+    },
+    "NETWORK_COVALENT": {
+      "phi_avg": 0.5448978578590128,
+      "delta_phi": 0.2161169230447846,
+      "n": 4
+    },
+    "INTERMETALLIC": {
+      "phi_avg": 0.3218728167614455,
+      "delta_phi": 0.24000237232548588,
+      "n": 4
+    },
+    "TM_OXIDE": {
+      "phi_avg": 0.6420679526755023,
+      "delta_phi": 0.5897362335256258,
+      "n": 5
+    }
+  },
+  "compounds": [
+    {
+      "formula": "NaCl",
+      "true_class": "IONIC",
+      "phi_avg": 0.861393,
+      "delta_phi": 0.325602,
+      "ionicity": 0.245626,
+      "phi_comp": 0.615767,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.334897
+    },
+    {
+      "formula": "KBr",
+      "true_class": "IONIC",
+      "phi_avg": 0.546225,
+      "delta_phi": 1.383823,
+      "ionicity": 0.580506,
+      "phi_comp": -0.03428,
+      "nearest_centroid_2d": "IONIC",
+      "distance_2d": 0.396022
+    },
+    {
+      "formula": "MgO",
+      "true_class": "IONIC",
+      "phi_avg": 0.361704,
+      "delta_phi": 1.0286,
+      "ionicity": 0.507049,
+      "phi_comp": -0.145345,
+      "nearest_centroid_2d": "POLAR_COVALENT",
+      "distance_2d": 0.206638
+    },
+    {
+      "formula": "CaF2",
+      "true_class": "IONIC",
+      "phi_avg": 0.917596,
+      "delta_phi": 1.748826,
+      "ionicity": 0.636208,
+      "phi_comp": 0.281388,
+      "nearest_centroid_2d": "IONIC",
+      "distance_2d": 0.715323
+    },
+    {
+      "formula": "LiF",
+      "true_class": "IONIC",
+      "phi_avg": 1.116671,
+      "delta_phi": 0.767734,
+      "ionicity": 0.434304,
+      "phi_comp": 0.682367,
+      "nearest_centroid_2d": "IONIC",
+      "distance_2d": 0.454857
+    },
+    {
+      "formula": "H2O",
+      "true_class": "POLAR_COVALENT",
+      "phi_avg": 0.073918,
+      "delta_phi": 1.203129,
+      "ionicity": 0.5461,
+      "phi_comp": -0.472182,
+      "nearest_centroid_2d": "POLAR_COVALENT",
+      "distance_2d": 0.5069
+    },
+    {
+      "formula": "HCl",
+      "true_class": "POLAR_COVALENT",
+      "phi_avg": 0.348535,
+      "delta_phi": 1.351319,
+      "ionicity": 0.574707,
+      "phi_comp": -0.226172,
+      "nearest_centroid_2d": "IONIC",
+      "distance_2d": 0.510035
+    },
+    {
+      "formula": "NH3",
+      "true_class": "POLAR_COVALENT",
+      "phi_avg": -0.096827,
+      "delta_phi": 0.92119,
+      "ionicity": 0.479489,
+      "phi_comp": -0.576316,
+      "nearest_centroid_2d": "POLAR_COVALENT",
+      "distance_2d": 0.521246
+    },
+    {
+      "formula": "SO2",
+      "true_class": "POLAR_COVALENT",
+      "phi_avg": 0.889235,
+      "delta_phi": 0.039692,
+      "ionicity": 0.038177,
+      "phi_comp": 0.851058,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.386903
+    },
+    {
+      "formula": "PCl3",
+      "true_class": "POLAR_COVALENT",
+      "phi_avg": 0.866411,
+      "delta_phi": 0.631134,
+      "ionicity": 0.38693,
+      "phi_comp": 0.479481,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.22813
+    },
+    {
+      "formula": "SiO2",
+      "true_class": "NETWORK_COVALENT",
+      "phi_avg": 0.744679,
+      "delta_phi": 0.393977,
+      "ionicity": 0.282628,
+      "phi_comp": 0.462051,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.221022
+    },
+    {
+      "formula": "BN",
+      "true_class": "NETWORK_COVALENT",
+      "phi_avg": 0.527248,
+      "delta_phi": 0.133635,
+      "ionicity": 0.117882,
+      "phi_comp": 0.409366,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.084349
+    },
+    {
+      "formula": "SiC",
+      "true_class": "NETWORK_COVALENT",
+      "phi_avg": 0.428241,
+      "delta_phi": 0.107573,
+      "ionicity": 0.097125,
+      "phi_comp": 0.331116,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.159344
+    },
+    {
+      "formula": "AlN",
+      "true_class": "NETWORK_COVALENT",
+      "phi_avg": 0.479424,
+      "delta_phi": 0.229282,
+      "ionicity": 0.186517,
+      "phi_comp": 0.292907,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.066784
+    },
+    {
+      "formula": "CuZn",
+      "true_class": "INTERMETALLIC",
+      "phi_avg": 0.230672,
+      "delta_phi": 0.565866,
+      "ionicity": 0.361376,
+      "phi_comp": -0.130704,
+      "nearest_centroid_2d": "POLAR_COVALENT",
+      "distance_2d": 0.322234
+    },
+    {
+      "formula": "NiAl",
+      "true_class": "INTERMETALLIC",
+      "phi_avg": 0.444554,
+      "delta_phi": 0.159542,
+      "ionicity": 0.137591,
+      "phi_comp": 0.306964,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.115194
+    },
+    {
+      "formula": "FeAl",
+      "true_class": "INTERMETALLIC",
+      "phi_avg": 0.349564,
+      "delta_phi": 0.030437,
+      "ionicity": 0.029538,
+      "phi_comp": 0.320026,
+      "nearest_centroid_2d": "INTERMETALLIC",
+      "distance_2d": 0.211387
+    },
+    {
+      "formula": "TiAl",
+      "true_class": "INTERMETALLIC",
+      "phi_avg": 0.262701,
+      "delta_phi": 0.204164,
+      "ionicity": 0.169548,
+      "phi_comp": 0.093153,
+      "nearest_centroid_2d": "INTERMETALLIC",
+      "distance_2d": 0.069179
+    },
+    {
+      "formula": "FeO",
+      "true_class": "TM_OXIDE",
+      "phi_avg": 0.605175,
+      "delta_phi": 0.541658,
+      "ionicity": 0.351348,
+      "phi_comp": 0.253827,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.060602
+    },
+    {
+      "formula": "Fe2O3",
+      "true_class": "TM_OXIDE",
+      "phi_avg": 0.659341,
+      "delta_phi": 0.541658,
+      "ionicity": 0.351348,
+      "phi_comp": 0.307993,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.051086
+    },
+    {
+      "formula": "TiO2",
+      "true_class": "TM_OXIDE",
+      "phi_avg": 0.637542,
+      "delta_phi": 0.715385,
+      "ionicity": 0.41704,
+      "phi_comp": 0.220502,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.12573
+    },
+    {
+      "formula": "MnO2",
+      "true_class": "TM_OXIDE",
+      "phi_avg": 0.613477,
+      "delta_phi": 0.78758,
+      "ionicity": 0.440585,
+      "phi_comp": 0.172893,
+      "nearest_centroid_2d": "TM_OXIDE",
+      "distance_2d": 0.199899
+    },
+    {
+      "formula": "CuO",
+      "true_class": "TM_OXIDE",
+      "phi_avg": 0.694804,
+      "delta_phi": 0.362399,
+      "ionicity": 0.266001,
+      "phi_comp": 0.428804,
+      "nearest_centroid_2d": "NETWORK_COVALENT",
+      "distance_2d": 0.209453
+    }
+  ]
+}

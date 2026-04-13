@@ -1,0 +1,5 @@
+{"cid":"sha256:c80cd0880901308c640d5c124c1b9dd32d8ff9c94c56eaca8de43833623cfa4b","kind":"rel","name":"./packages/collapse-elements/src/export","t":"module_resolve"}
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:079b7806d7457a3a32a8dd66d0c8ea06bfdfa5866e33903a291cc43450535630","kind":"std","name":"std/json","t":"module_resolve"}
+{"cid":"sha256:4d5cf38fab2a546127f9c38c7b560b5b0165ca3469aaf40af72ab324f432e335","kind":"std","name":"std/csv","t":"module_resolve"}
+{"cid":"sha256:a80272c8ed8f00dafd443dced3ff86f3ee5572dbdbb6b58b76e397920e7a2f94","t":"module_graph"}

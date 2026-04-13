@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"str.from expects a scalar value","partial_trace_digest":"sha256:1658a177bc1cd1cc6c65c6deb9b27acc9e9e6c4c0e993fd6b339330378c2fc36","span":{"col":6,"file":"test_record_keys.fard","line":11},"witnessed_failure":true}

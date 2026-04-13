@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"unbound var: type -- did you forget to import? Try: import(\"std/type\") as type","partial_trace_digest":"sha256:f92b36207a232c7ba652879aa64ac2186a7657e2a641fe0145d8b38d2238f93a","span":{"col":6,"file":"test_csv_structure.fard","line":14},"witnessed_failure":true}

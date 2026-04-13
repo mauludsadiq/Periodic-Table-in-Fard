@@ -1,0 +1,38 @@
+import("std/io") as io
+import("std/list") as list
+import("std/str") as str
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-elements/src/export") as exp
+import("./packages/collapse-elements/src/analysis") as analysis
+
+fn counts(elements) {
+  let total = list.len(elements) in
+  let e_phase = list.len(analysis.by_phase(elements, "E")) in
+  let z_phase = list.len(analysis.by_phase(elements, "Z")) in
+  let one_phase = list.len(analysis.by_phase(elements, "1")) in
+  {
+    total: total,
+    e_phase: e_phase,
+    z_phase: z_phase,
+    one_phase: one_phase
+  }
+}
+
+fn summary_text(table) {
+  let c = counts(table.elements) in
+  str.join([
+    "Periodic Table in FARD",
+    "======================",
+    "total elements=${c.total}",
+    "E phase=${c.e_phase}",
+    "Z phase=${c.z_phase}",
+    "1 phase=${c.one_phase}"
+  ], "\n")
+}
+
+fn main() {
+  "Functions loaded successfully"
+}
+
+main()

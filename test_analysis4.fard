@@ -1,0 +1,3 @@
+import("./packages/collapse-elements/src/analysis") as analysis
+fn main() { "ok" }
+main()

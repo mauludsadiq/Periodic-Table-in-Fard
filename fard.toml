@@ -1,0 +1,5 @@
+name = "periodic_table_fard"
+version = "1.0.0"
+
+[run]
+program = "apps/build_periodic_table.fard"

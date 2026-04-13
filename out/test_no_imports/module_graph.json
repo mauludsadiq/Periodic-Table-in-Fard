@@ -1,0 +1,1 @@
+{"edges":[{"from":0,"kind":"import","to":1}],"nodes":[{"digest":"sha256:9d01e577c06ce6b7ac8431422c8d15f9777f4c7924398ceaf5d78b40c986bc04","id":0,"kind":"rel","path":"apps/build_no_imports.fard","spec":"apps/build_no_imports.fard"},{"digest":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","id":1,"kind":"std","spec":"std/io"}]}

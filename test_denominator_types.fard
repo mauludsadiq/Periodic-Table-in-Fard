@@ -1,0 +1,15 @@
+import("std/io") as io
+import("std/type") as type
+import("std/str") as str
+import("std/float") as float
+import("std/cast") as cast
+
+fn main() {
+  let lines = [
+    "cast.float(2)=${type.of(cast.float(2))}",
+    "float.from_int(2)=${type.of(float.from_int(2))}"
+  ] in
+  io.write_file("out/denominator_types.txt", str.join(lines, "\n"))
+}
+
+main()

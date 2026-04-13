@@ -1,0 +1,24 @@
+fn classify_phi(phi_star, threshold) {
+  if phi_star > threshold then "E"
+  else if phi_star < (0.0 - threshold) then "1"
+  else "Z"
+}
+
+fn phase_color(phase) {
+  if phase == "E" then "red"
+  else if phase == "1" then "blue"
+  else "white"
+}
+
+fn classify_spin(phi_spin, t_dia, t_ferro) {
+  let mag = if phi_spin < 0.0 then 0.0 - phi_spin else phi_spin in
+  if mag < t_dia then "DIAMAGNETIC"
+  else if mag < t_ferro then "PARAMAGNETIC"
+  else "FERROMAGNETIC"
+}
+
+{
+  classify_phi: classify_phi,
+  phase_color: phase_color,
+  classify_spin: classify_spin
+}

@@ -1,0 +1,9 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:8dff43a3f5b27efa3286132064b6e04f5a2acd609e35bdb2907605fb1a984736","kind":"std","name":"std/rec","t":"module_resolve"}
+{"cid":"sha256:4d5cf38fab2a546127f9c38c7b560b5b0165ca3469aaf40af72ab324f432e335","kind":"std","name":"std/csv","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:aed0022cf8f33c68d697029ae1a7d9c5d318f535c22aa74a9d059a1b3b5d4638","kind":"std","name":"std/float","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"code":"ERROR_RUNTIME","partial_trace_digest":"sha256:23df7f307f8bb703b20704b46c894f300a375afada0d4d10483469ed8f138f2c","t":"witnessed_failure"}
+{"cid":"sha256:4b71fd0a6df33c4595bc382ba5a2bbc0494f230cf652a3502ff79ff9667101dd","t":"module_graph"}
+{"code":"ERROR_RUNTIME","message":"ERROR_RUNTIME str.from expects a scalar value","t":"error"}

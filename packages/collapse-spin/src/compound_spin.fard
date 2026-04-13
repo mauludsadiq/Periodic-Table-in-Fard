@@ -1,0 +1,38 @@
+import("../../collapse-compounds/src/binary") as binary
+import("../../collapse-elements/src/analysis") as analysis
+import("../../collapse-elements/src/spin_tight") as spin_tight
+import("../../collapse-core/src/phase") as cphase
+import("../../collapse-core/src/math") as cmath
+
+fn compound_spin_phase(phi_spin) {
+  cphase.classify_spin(phi_spin, 0.06, 0.35)
+}
+
+fn compound_spin_record(table, config, symbol_a, symbol_b, n_a, n_b) {
+  let comp = binary.binary_compound(table, config, symbol_a, symbol_b, n_a, n_b) in
+  let a_opt = analysis.by_symbol(table.elements, symbol_a) in
+  let b_opt = analysis.by_symbol(table.elements, symbol_b) in
+  let a = a_opt.some in
+  let b = b_opt.some in
+  let spin_a = spin_tight.tight_spin_record(a) in
+  let spin_b = spin_tight.tight_spin_record(b) in
+  let phi_spin_avg = cmath.weighted_mean2(spin_a.phi_spin, spin_b.phi_spin, n_a, n_b) in
+  let phi_spin = phi_spin_avg * (1.0 - comp.ionicity) in
+  {
+    symbol_a: symbol_a,
+    symbol_b: symbol_b,
+    stoichiometry: { a: n_a, b: n_b },
+    phi_avg: comp.phi_avg,
+    delta_phi: comp.delta_phi,
+    ionicity: comp.ionicity,
+    phi_compound: comp.phi_compound,
+    compound_phase: comp.phase,
+    phi_spin: phi_spin,
+    spin_phase: compound_spin_phase(phi_spin)
+  }
+}
+
+{
+  compound_spin_phase: compound_spin_phase,
+  compound_spin_record: compound_spin_record
+}

@@ -1,0 +1,29 @@
+import("std/io") as io
+import("std/rec") as rec
+import("std/csv") as csv
+import("std/list") as list
+import("std/str") as str
+
+fn main() {
+  let result = io.read_file("data/pubchem_periodic_table.csv") in
+  let text = rec.get(result, "ok") in
+  let rows = csv.parse(text) in
+  let headers = list.head(rows) in
+  let data_rows = list.tail(rows) in
+  let first_row = list.head(data_rows) in
+  
+  let headers_text = list.map(headers, fn(h) { str.from(h) }) in
+  let zipped = list.zip(headers_text, first_row) in
+  
+  let record = list.fold(zipped, {}, fn(acc, pair) {
+    let key = list.head(pair) in
+    let value = list.head(list.tail(pair)) in
+    let key_type = type.of(key) in
+    let _ = io.write_file("out/key_type.txt", str.from(key_type)) in
+    rec.set(acc, key, value)
+  }) in
+  
+  let symbol = rec.get(record, "Symbol") in
+  io.write_file("out/fold_result.txt", symbol)
+}
+main()

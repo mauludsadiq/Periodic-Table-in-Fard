@@ -1,0 +1,16 @@
+import("std/list") as list
+import("std/float") as float
+import("std/rec") as rec
+import("../../collapse-core/src/math") as cmath
+import("../../collapse-core/src/phase") as cphase
+import("../../collapse-core/src/types") as ctypes
+
+fn sum_field(rows, key) {
+  list.fold(rows, 0.0, fn(acc, row) {
+    acc + 1.0
+  })
+}
+
+{
+  sum_field: sum_field
+}

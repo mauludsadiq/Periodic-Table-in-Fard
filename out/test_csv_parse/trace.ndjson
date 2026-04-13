@@ -1,0 +1,5 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:4d5cf38fab2a546127f9c38c7b560b5b0165ca3469aaf40af72ab324f432e335","kind":"std","name":"std/csv","t":"module_resolve"}
+{"code":"ERROR_BADARG","partial_trace_digest":"sha256:ae43dc9280a72fdd10f6706eb9dc8fcab6db63e18bb7274fa106f0c18eb68f91","t":"witnessed_failure"}
+{"cid":"sha256:976010cfe7584638d170c18d804db7965e08507b4ca26ca17d2f56f1d0d180c4","t":"module_graph"}
+{"code":"ERROR_BADARG","message":"ERROR_BADARG csv.parse expects text","t":"error"}

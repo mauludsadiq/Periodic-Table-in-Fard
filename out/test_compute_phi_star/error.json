@@ -1,0 +1,1 @@
+{"code":"ERROR_RUNTIME","message":"vm: type error in /","partial_trace_digest":"sha256:ccaf1a44610299d28fb87c04b4b917dea34b3eced7f67bf4216f2a09ee901619","span":{"col":6,"file":"test_compute_phi_star.fard","line":28},"witnessed_failure":true}

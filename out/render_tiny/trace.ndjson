@@ -1,0 +1,7 @@
+{"cid":"sha256:a5fb362955955f06d78746451c74c5e3458be27b2304bbb79b5139cef1cf4124","kind":"std","name":"std/io","t":"module_resolve"}
+{"cid":"sha256:37e3c18252794ca1141a92f7d6a375929b25a3a808527150e7cc6b8d54b0cb88","kind":"rel","name":"./packages/collapse-render/src/scene","t":"module_resolve"}
+{"cid":"sha256:2d128f8f8ea9368d1d88d2ca9a6b1202e3e1a2cf5fd974a11b3a697cca1db448","kind":"std","name":"std/list","t":"module_resolve"}
+{"cid":"sha256:e1969d3d0193bc0d79d65c69bb895f85c5b96b9c3b5f182c98c63e71a47b057f","kind":"std","name":"std/str","t":"module_resolve"}
+{"cid":"sha256:c7a3ea63df94ecc9a44c176275339e8fafae5c0382e7f9653cdcd5583187c454","kind":"rel","name":"./layouts","t":"module_resolve"}
+{"cid":"sha256:6f394ad5338830b4281edc3cd77a0230c1aa557f4fd2e43d0c96581170545c78","kind":"rel","name":"./ppm","t":"module_resolve"}
+{"cid":"sha256:4869a44d27938f19a4e0c0744885c568f97ffd4a567108545564a0d51f5392f8","t":"module_graph"}

@@ -1,0 +1,36 @@
+import("./ppm") as ppm
+
+fn phase_color(phase) {
+  if phase == "E" then ppm.rgb(249, 179, 179)
+  else if phase == "1" then ppm.rgb(165, 200, 255)
+  else ppm.rgb(244, 244, 244)
+}
+
+fn layout_phone() {
+  { width: 240, height: 420, cols: 6, cell: 28, margin_x: 12, margin_y: 16 }
+}
+
+fn layout_tablet() {
+  { width: 420, height: 560, cols: 10, cell: 28, margin_x: 10, margin_y: 16 }
+}
+
+fn layout_desktop() {
+  { width: 720, height: 240, cols: 18, cell: 28, margin_x: 8, margin_y: 16 }
+}
+
+fn cell_origin(layout, idx) {
+  let col = idx % layout.cols in
+  let row = idx / layout.cols in
+  {
+    x: layout.margin_x + (col * layout.cell),
+    y: layout.margin_y + (row * layout.cell)
+  }
+}
+
+{
+  phase_color: phase_color,
+  layout_phone: layout_phone,
+  layout_tablet: layout_tablet,
+  layout_desktop: layout_desktop,
+  cell_origin: cell_origin
+}

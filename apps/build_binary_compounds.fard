@@ -1,0 +1,21 @@
+import("std/io") as io
+import("std/json") as json
+import("std/list") as list
+import("./packages/collapse-core/src/types") as ctypes
+import("./packages/collapse-elements/src/periodic_table") as ptable
+import("./packages/collapse-compounds/src/binary") as binary
+
+fn main() {
+  let _ = io.make_dir("out") in
+  let config = ctypes.build_config() in
+  let table = ptable.build_table("data/pubchem_periodic_table.csv", "data/polarizability_2020.csv", config) in
+  let compounds = [
+    binary.binary_compound(table, config, "Na", "Cl", 1.0, 1.0),
+    binary.binary_compound(table, config, "H", "O", 2.0, 1.0),
+    binary.binary_compound(table, config, "C", "O", 1.0, 2.0),
+    binary.binary_compound(table, config, "Fe", "O", 2.0, 3.0)
+  ] in
+  io.write_file("out/binary_compounds.json", json.encode(compounds))
+}
+
+main()

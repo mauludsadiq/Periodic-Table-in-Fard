@@ -1,0 +1,86 @@
+import("std/io") as io
+import("std/json") as json
+import("std/csv") as csv
+import("std/list") as list
+
+fn write_json(path, value) {
+  io.write_file(path, json.encode(value))
+}
+
+fn write_text(path, text) {
+  io.write_file(path, text)
+}
+
+fn write_csv(path, rows) {
+  io.write_file(path, csv.encode(rows))
+}
+
+fn element_to_export_row(e) {
+  {
+    Z: e.Z,
+    Symbol: e.symbol,
+    Name: e.name,
+    Period: e.period,
+    Group: e.group,
+    I_eV: e.ionization_energy,
+    A_eV: e.electron_affinity,
+    chi: e.electronegativity,
+    alpha_au: e.polarizability_au,
+    eta_eV: e.hardness,
+    phi_star: e.phi_star,
+    phase: e.phase,
+    color: e.color
+  }
+}
+
+fn element_to_csv_row(e) {
+  [
+    e.Z,
+    e.symbol,
+    e.name,
+    e.period,
+    e.group,
+    e.ionization_energy,
+    e.electron_affinity,
+    e.electronegativity,
+    e.polarizability_au,
+    e.hardness,
+    e.phi_star,
+    e.phase,
+    e.color
+  ]
+}
+
+fn export_elements_json(path, elements) {
+  write_json(path, list.map(elements, element_to_export_row))
+}
+
+fn export_elements_csv(path, elements) {
+  let header = [[
+    "Z",
+    "Symbol",
+    "Name",
+    "Period",
+    "Group",
+    "I_eV",
+    "A_eV",
+    "chi",
+    "alpha_au",
+    "eta_eV",
+    "phi_star",
+    "phase",
+    "color"
+  ]] in
+  let rows = list.map(elements, element_to_csv_row) in
+  write_csv(path, list.concat([header, rows]))
+}
+
+{
+  write_json: write_json,
+  write_text: write_text,
+  write_csv: write_csv,
+  element_to_export_row: element_to_export_row,
+  element_to_csv_row: element_to_csv_row,
+  export_elements_json: export_elements_json,
+  export_elements_csv: export_elements_csv
+}

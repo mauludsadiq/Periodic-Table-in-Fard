@@ -1,0 +1,3 @@
+{"code":"ERROR_PARSE","partial_trace_digest":"sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","t":"witnessed_failure"}
+{"cid":"sha256:95e8dbf60630086edbadf0968ff19c731792de94a19dddafb059f9e6fb60fa3e","t":"module_graph"}
+{"code":"ERROR_PARSE","message":"ERROR_PARSE expected identifier; got Kw(\"test\")","t":"error"}
